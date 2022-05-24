@@ -1,0 +1,116 @@
+html {
+    background: rgba(253, 101, 99, 0.439);
+    font-family: Arial Narrow, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". . . . . . . . . "
+    ". . calc1 calc1 . calc2 calc2 . ."
+    ". . calc1 calc1 . calc2 calc2 . ."
+    ". . calc1 calc1 . calc2 calc2 . ."
+    ". . calc1 calc1 . calc2 calc2 . ."
+    ". . calc1 calc1 . calc2 calc2 . ."
+    ". . . . . . . . ."
+}
+
+#calc1 {
+    grid-area: calc1;
+    background: rgb(33, 39, 48);
+}
+
+#calc2 {
+    grid-area: calc2;
+    background: ghostwhite;
+}
+
+.calc {
+    text-align: center;
+    margin: 6rem 0;
+    border-radius: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: 0.4rem 0.4rem 0.4rem rgb(47, 47, 47), -0.2rem 0 0.4rem rgb(47, 47, 47);
+}
+
+#calc1 > .output {
+    color: white;
+}
+
+#calc2 > .output {
+    color: rgb(33, 39, 48);
+}
+
+#calc2 > .memory {
+    color: gray;
+}
+
+.output {
+    font-size: 3.2em;
+    text-align: right;
+    padding: 0 0.5em;
+}
+
+.memory {
+    font-size: 1.6em;
+    text-align: right;
+    padding: 0 1em;
+    color: gray;
+}
+
+.number, .AC,  .del, .perc, .add, .sub, .mult, .divide {
+    background: rgb(33, 39, 48);
+    color: rgb(247, 106, 106);
+}
+
+#calc1 > .number {
+    color: ghostwhite;
+}
+
+#calc2 > .number {
+    color: gray;
+}
+
+#calc2 > .number, #calc2 > .AC, #calc2 > .del, #calc2 > .perc,
+#calc2 > .add, #calc2 > .sub, #calc2 > .mult, #calc2 > .divide {
+    background: white;
+}
+
+button {
+    font-size: 1.6em;
+    width: 3em;
+    height: 3em;
+    margin: 0.3em 0.15em;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 0 0.1em 0.1em gray, 0em -0.05em 0.05em gray;
+    font-family: Optima, sans-serif;
+}
+
+#calc1 button {
+    box-shadow: 0 0.1em 0.1em black, 0em -0.05em 0.1em gray;
+}
+
+
+#calc1 button:hover {
+    background: rgb(15, 17, 21);
+}
+
+#calc2 button:hover {
+    background: rgb(196, 196, 201);
+}
+
+#calc1 > .equals:hover, #calc2 > .equals:hover {
+    background: rgba(184, 0, 0, 0.294);
+}
+
+.equals {
+    width: 6.4em;
+    background: rgb(247, 106, 106);
+}
+
+#calc2 > .equals {
+    background: rgb(253, 142, 142);
+}

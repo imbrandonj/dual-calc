@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dual Calc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <!-- Div for first calc -->
+    <div id="calc1" class="calc">
+            <p class="output" id="outputA">0</p>
+            <p class="memory" id="memoryA">0</p>
+            <button class="AC">AC</button>
+            <button class="del">del</button>
+            <button class="perc">%</button>
+            <button class="divide" onclick = storeVal(this.value) value="/">/</button>
+            <br>
+            <button class="number" onclick = storeVal(this.value) value="7">7</button>
+            <button class="number" onclick = storeVal(this.value) value="8">8</button>
+            <button class="number" onclick = storeVal(this.value) value="9">9</button>
+            <button class="mult" onclick = storeVal(this.value) value="x">x</button>
+            <br>
+            <button class="number" onclick = storeVal(this.value) value="4">4</button>
+            <button class="number" onclick = storeVal(this.value) value="5">5</button>
+            <button class="number" onclick = storeVal(this.value) value="6">6</button>
+            <button class="sub" onclick = storeVal(this.value) value="-">-</button>
+            <br>
+            <button class="number" onclick = storeVal(this.value) value="1">1</button>
+            <button class="number" onclick = storeVal(this.value) value="2">2</button>
+            <button class="number" onclick = storeVal(this.value) value="3">3</button>
+            <button class="add" onclick = storeVal(this.value) value="+">+</button>
+            <br>
+            <button class="number" onclick = storeVal(this.value) value="0">0</button>
+            <button class="number">.</button>
+            <button class="equals" onclick = equalsActivated()>=</button>
+    </div>
+
+    <!-- Div for second calc -->
+    <div id="calc2" class="calc">
+            <p class="output">12345</p>
+            <p class="memory">67890</p>
+            <button class="AC">AC</button>
+            <button class="del">del</button>
+            <button class="perc">%</button>
+            <button class="divide">/</button>
+            <br>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="mult">x</button>
+            <br>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="sub">-</button>
+            <br>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="add">+</button>
+            <br>
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <button class="equals">=</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
