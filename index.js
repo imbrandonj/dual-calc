@@ -19,42 +19,63 @@ const operate = (operator, a, b) => {
         case '/':
             return divide(a, b);
     }
-}
+};
 
 // This function stores the value on button event and displays
-// On Memory and Output
+// On Memory and Output Paragraphs of Calculator
 const storeVal = (val) => {
-    operation.push(val);
 
-    let i = operation.length - 1;
-    if ( i < 1 ) {  // Erases default 0
-        outputA.textContent = operation[i];
+    // Store initial value:
+    if ( operation.length < 1 ) {
+        operation.push(val);
+
+    } else if ( ( val != '+' && val != '-' && val != 'x' && val != '/' ) && 
+    ( operation.slice(-1) != '+' && operation.slice(-1) != '-' && operation.slice(-1) != 'x' && operation.slice(-1) != '/') ) {
+        // Store a two digit value of a two click event:
+        operation[operation.length - 1] += val;
+
+    } else {
+        // Store the second value:
+        operation.push(val);
+    };
+
+    let i = operation.length - 1; 
+    if ( i < 1 ) {  
+        // Erases default 0
+        // Displays first value
+        outputA.textContent = operation[i];  // First value will always be first index of operation array
         memoryA.textContent = outputA.textContent;
+
     } else if ( operation[i] === '+' || operation[i] === '-' || operation[i] === 'x' || operation[i] === '/' ) {
-        // Adds spaces in operation
+        // Adds spaces in operation between operators
         outputA.textContent += ' ' + operation[i] + ' ';
         memoryA.textContent = outputA.textContent;
+
     } else {
-        outputA.textContent += operation[i];
+        // Displays second value
+        outputA.textContent += val;  // Second value is displayed via val argument on event click rather than operation array
         memoryA.textContent = outputA.textContent;
     }
-}
+};
 
 // This function fires when equals is selected
 const equalsActivated = () => {
-    let a = operation[0];
-    let b = operation[2];
+    let a = Number(operation[0]);
+    let b = Number(operation[2]);
     let operator = operation[1];
 
     outputA.textContent = operate(operator, a, b);
     memoryA.textContent = outputA.textContent;
-}
 
-// Stores operation values and operators
+    // Reset array for new operation:
+    operation = [];
+};
+
+// Store first value, operator, and second value:
 let operation = [];
 
 
 // Memory and Output Paragraphs for Calculator 1 (A)
-const calc1 = document.getElementById('calc1')
+const calc1 = document.getElementById('calc1');
 const outputA = document.getElementById('outputA');
 const memoryA = document.getElementById('memoryA');
