@@ -14,7 +14,7 @@
             <p class="output" id="outputA">0</p>
             <p class="memory" id="memoryA">0</p>
             <button class="AC" onclick = allClear()>AC</button>
-            <button class="del">del</button>
+            <button class="del" onclick=delButton()>del</button>
             <button class="perc">%</button>
             <button class="divide" onclick = storeVal(this.value) value="/">/</button>
             <br>
@@ -34,7 +34,7 @@
             <button class="add" onclick = storeVal(this.value) value="+">+</button>
             <br>
             <button class="number" onclick = storeVal(this.value) value="0">0</button>
-            <button class="number">.</button>
+            <button class="number" onclick = storeVal(this.value) value=".">.</button>
             <button class="equals" onclick = equalsActivated()>=</button>
     </div>
 
